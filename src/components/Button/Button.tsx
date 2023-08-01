@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ButtonProps } from "@/types/buttonTypes";
 
-const filled = "bg-green-600 text-white hover:bg-green-500 active:bg-gray-500";
+const filled = "bg-green-600 text-white hover:bg-green-500 active:bg-green-600";
 const disabledStyle =
   "opacity-50 bg-gray-300 text-gray-500 cursor-default hover:bg-gray-300 hover:scale-100 active:bg-gray-300 active:scale-100";
 const text =
