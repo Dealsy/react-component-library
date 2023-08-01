@@ -9,7 +9,7 @@ const text =
 const outlined =
   "border border-green-600 hover:bg-inherit active:bg-[#bbe0a7] text-green-800";
 const elevated =
-  "shadow-md shadow-inner border-b-2 border-gray-400 text-sm font-normal hover:bg-green-600 hover:text-white active:bg-[#8fd48c] ";
+  "shadow-md shadow-inner border-b-2 border-gray-400 text-sm font-normal hover:bg-green-600 hover:text-white active:bg-[#8fd48c]";
 
 export function Button({
   title,
