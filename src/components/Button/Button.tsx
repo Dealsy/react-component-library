@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import { ButtonProps } from "@/types/buttonTypes";
 
-const elevated =
-  "shadow-md shadow-inner border-b-2 border-gray-400 text-sm font-normal hover:bg-green-600 hover:text-white active:bg-[#8fd48c] ";
-const outlined =
-  "border border-green-600 hover:bg-inherit active:bg-[#bbe0a7] text-green-800";
-const text =
-  "hover:underline active:underline hover:bg-inherit active:text-lg active:bg-inherit active:scale-100";
 const filled = "bg-green-600 text-white hover:bg-green-500 active:bg-gray-500";
 const disabledStyle =
   "opacity-50 bg-gray-300 text-gray-500 cursor-default hover:bg-gray-300 hover:scale-100 active:bg-gray-300 active:scale-100";
+const text =
+  "hover:underline active:underline hover:bg-inherit active:text-lg active:bg-inherit active:scale-100";
+const outlined =
+  "border border-green-600 hover:bg-inherit active:bg-[#bbe0a7] text-green-800";
+const elevated =
+  "shadow-md shadow-inner border-b-2 border-gray-400 text-sm font-normal hover:bg-green-600 hover:text-white active:bg-[#8fd48c] ";
 
 export function Button({
   title,
