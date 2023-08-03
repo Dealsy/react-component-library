@@ -4,7 +4,7 @@ import { PlusCircleIcon } from "@heroicons/react/20/solid";
 export default function ButtonPage() {
   return (
     <div className="flex flex-col items-center justify-center gap-5 m-auto mt-20">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2">
         <Button title="Default" />
         <Button buttonStyle="elevated" title="Elevated" />
         <Button buttonStyle="outlined" title="Outlined" />
@@ -26,6 +26,9 @@ export default function ButtonPage() {
         />
 
         <Button title="Disabled" disabled />
+        <Button buttonStyle="elevated" title="Large" size="large" />
+        <Button buttonStyle="filled" title="Medium" size="medium" />
+        <Button buttonStyle="outlined" title="Small" size="small" />
       </div>
     </div>
   );
