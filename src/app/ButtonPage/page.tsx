@@ -26,6 +26,9 @@ export default function ButtonPage() {
         />
 
         <Button title="Disabled" disabled />
+        <Button buttonStyle="elevated" title="Large" size="large" />
+        <Button buttonStyle="filled" title="Medium" size="medium" />
+        <Button buttonStyle="outlined" title="Small" size="small" />
       </div>
     </div>
   );

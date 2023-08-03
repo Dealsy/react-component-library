@@ -12,9 +12,16 @@ const outlined =
 const elevated =
   "shadow-md shadow-inner border-b-2 border-gray-400 text-sm font-normal hover:bg-green-600 hover:scale-110 hover:text-white active:bg-[#8fd48c]";
 
+const sizes = {
+  small: "py-1 px-3 text-xs",
+  medium: "py-2 px-4 text-base",
+  large: "py-3 px-5 text-lg",
+};
+
 export function Button({
   title,
   buttonStyle = "filled",
+  size = "medium",
   className,
   disabled,
   leftIcon,
@@ -26,8 +33,9 @@ export function Button({
       disabled={disabled}
       onClick={onClick}
       className={clsx(
-        "py-3 px-5 transition duration-300 ease-in-out transform rounded-full text-sm leading-none",
+        "py-3 px-5 transition duration-300 ease-in-out transform rounded-full leading-none",
         "font-medium",
+        sizes[size],
         buttonStyle === "elevated" && !disabled && elevated,
         buttonStyle === "outlined" && !disabled && outlined,
         buttonStyle === "text" && !disabled && text,
