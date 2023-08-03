@@ -1,5 +1,5 @@
 export type ButtonProps = {
-    onClick?: () => void
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     title: string
     buttonStyle?: 'elevated' | 'outlined' | 'text' | 'filled' 
     size?: "small" | "medium" | "large";
