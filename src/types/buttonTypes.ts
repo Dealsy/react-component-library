@@ -7,4 +7,5 @@ export type ButtonProps = {
     leftIcon?: React.ReactNode
     rightIcon?: React.ReactNode
     className?: string
+    // TODO - Add button types i.e cancel, confirm, these should have default styles
 } 
