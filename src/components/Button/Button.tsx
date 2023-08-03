@@ -4,8 +4,10 @@ import clsx from "clsx";
 import { ButtonProps } from "@/types/buttonTypes";
 
 const common = `transition duration-300 
- ease-in-out transform 
- rounded-full text-sm 
+ ease-in-out 
+ transform 
+ rounded-full 
+ text-sm 
  leading-none`;
 
 const hoverEffect = `hover:scale-110`;
@@ -15,7 +17,8 @@ const focusEffect = `focus:scale-110`;
 const filled = `${common}
  ${hoverEffect}
  ${focusEffect}
- bg-green-600 text-white 
+ bg-green-600 
+ text-white 
  hover:bg-green-500
  focus:bg-green-500 
  active:bg-green-600`;
@@ -39,7 +42,8 @@ const text = `${common}
 const outlined = `${common}
  ${hoverEffect}
  ${focusEffect}
- border border-green-600 
+ border 
+ border-green-600 
  hover:bg-inherit 
  active:bg-[#bbe0a7] 
  text-green-800`;
@@ -47,7 +51,8 @@ const outlined = `${common}
 const elevated = `${common}
  ${hoverEffect}
  ${focusEffect}
- shadow-md shadow-inner 
+ shadow-md 
+ shadow-inner 
  border-b-2 border-gray-400 
  text-sm font-normal 
  hover:bg-green-600 
