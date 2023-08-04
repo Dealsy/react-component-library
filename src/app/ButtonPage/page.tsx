@@ -1,5 +1,5 @@
-import { Button } from "@/components";
-import { PlusCircleIcon } from "@heroicons/react/20/solid";
+import { Button } from '@/components'
+import { PlusCircleIcon } from '@heroicons/react/20/solid'
 
 export default function ButtonPage() {
   return (
@@ -13,16 +13,12 @@ export default function ButtonPage() {
         <Button
           buttonStyle="elevated"
           title="    Left Icon"
-          leftIcon={
-            <PlusCircleIcon width={30} height={30} className="text-green-500" />
-          }
+          leftIcon={<PlusCircleIcon width={30} height={30} className="text-green-500" />}
         />
         <Button
           buttonStyle="elevated"
           title="Right Icon"
-          rightIcon={
-            <PlusCircleIcon width={30} height={30} className="text-green-500" />
-          }
+          rightIcon={<PlusCircleIcon width={30} height={30} className="text-green-500" />}
         />
 
         <Button title="Disabled" disabled />
@@ -31,5 +27,5 @@ export default function ButtonPage() {
         <Button buttonStyle="outlined" title="Small" size="small" />
       </div>
     </div>
-  );
+  )
 }

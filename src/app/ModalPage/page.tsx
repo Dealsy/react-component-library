@@ -8,6 +8,7 @@ export interface ModalProps {
   isOpen: boolean
   type: 'none' | 'open'
 }
+
 export default function ModalPage({}) {
   const [form, setForm] = useState({ name: '', email: '' })
   const [loading, setLoading] = useState(false)
