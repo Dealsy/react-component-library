@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, RefObject } from "react";
 
 export type InputProps = (
     | {
@@ -19,4 +19,5 @@ export type InputProps = (
     className?: string;
     required?: boolean;
     id?: string;
+    ref?: RefObject<HTMLInputElement>;
   };
