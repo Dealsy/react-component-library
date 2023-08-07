@@ -7,5 +7,9 @@ export const Routes = [
       name: "Modal",
       path: "./ModalPage",
     },
+    {
+      name: "Input",
+      path: "./InputPage",
+    },
   ];
   
