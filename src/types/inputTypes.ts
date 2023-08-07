@@ -6,16 +6,17 @@ export type InputProps = AllOrNothing<{
   value: string;
   onChange: ChangeEventHandler;
 }> & {
+    id?: string;
     label: string;
-    disabled?: boolean;
-    error?: string;
-    type?: string;
     name?: string;
+    type?: string;
+    error?: string;
     placeholder?: string;
     required?: boolean;
-    id?: string;
-    labelContainerStyle?: string;
+    disabled?: boolean;
     labelStyle?: string;
     inputStyle?: string;
     errorStyle?: string;
+    labelContainerStyle?: string;
+   
   };

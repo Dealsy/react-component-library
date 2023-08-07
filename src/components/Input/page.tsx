@@ -41,6 +41,8 @@ export function Input(props: InputProps) {
         <input
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          role="input"
+          aria-label={props.label}
           onChange={handleInputChange}
           value={props.value}
           disabled={props.disabled}
