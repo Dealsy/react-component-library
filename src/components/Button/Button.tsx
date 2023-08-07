@@ -23,8 +23,17 @@ export const classNamesMap = {
  hover:bg-green-500
  focus:bg-green-500 
  active:bg-green-600`,
-
-  disabledStyle: `${common}
+  filledCancel: `${common}
+ ${hoverEffect}
+ ${focusEffect}
+ bg-red-500
+ text-white
+ hover:bg-red-600 
+ hover:text-white 
+ focus:bg-red-600 
+ focus:text-white 
+ active:bg-red-500`,
+  filledDisabledStyle: `${common}
  opacity-50 
  bg-gray-300 
  text-gray-500 
@@ -36,6 +45,10 @@ export const classNamesMap = {
  hover:bg-inherit 
  active:bg-inherit 
  active:scale-100`,
+  textDisabledStyle: `${common}
+ opacity-50 
+ text-gray-500 
+ cursor-default `,
 
   outlined: `${common}
  ${hoverEffect}
@@ -45,6 +58,21 @@ export const classNamesMap = {
  hover:bg-inherit 
  active:bg-[#bbe0a7] 
  text-green-800`,
+  outlinedCancel: `${common}
+ ${hoverEffect}
+ ${focusEffect}
+ border 
+ border-red-600 
+ hover:bg-inherit 
+ active:bg-red-300
+ text-red-800`,
+  outlinedDisabledStyle: `${common}
+ opacity-50 
+ border 
+ border-gray-400 
+ text-gray-500 
+ cursor-default 
+ `,
 
   elevated: `${common}
  ${hoverEffect}
@@ -58,6 +86,31 @@ export const classNamesMap = {
  focus:bg-green-600 
  focus:text-white 
  active:bg-[#8fd48c]`,
+  elevatedCancel: `${common}
+ ${hoverEffect}
+ ${focusEffect}
+ shadow-md 
+ shadow-inner 
+ border-b-2 border-gray-400 
+ bg-red-500
+ text-sm 
+ text-white
+ font-normal 
+ hover:bg-red-600 
+ hover:text-white 
+ focus:bg-red-600 
+ focus:text-white 
+ active:bg-red-500`,
+  elevatedDisabledStyle: `${common}
+ opacity-50 
+ bg-gray-300 
+ text-gray-500
+ shadow-md 
+ shadow-inner 
+ border-b-2 
+ border-gray-400  
+ cursor-default 
+ `,
 }
 
 export const sizes = {
@@ -107,10 +160,10 @@ export function Button({
       aria-disabled={disabled}
       aria-label={title}
     >
-      <div className="flex items-center justify-center gap-5">
-        {leftIcon ? leftIcon : null}
+      <div className="flex items-center justify-between gap-5">
+        {leftIcon || <div className="flex-shrink-0"></div>}
         {title}
-        {rightIcon ? rightIcon : null}
+        {rightIcon || <div className="flex-shrink-0"></div>}
       </div>
     </button>
   )
