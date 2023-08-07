@@ -1,23 +1,21 @@
-import { ChangeEventHandler, RefObject } from "react";
+import { ChangeEventHandler } from "react";
+import { AllOrNothing } from "./helpers";
 
-export type InputProps = (
-    | {
-        value: string;
-        onChange: ChangeEventHandler;
-      }
-    | {
-        value?: undefined;
-        onChange?: undefined;
-      }
-  ) & {
+
+export type InputProps = AllOrNothing<{
+  value: string;
+  onChange: ChangeEventHandler;
+}> & {
     label: string;
     disabled?: boolean;
     error?: string;
     type?: string;
     name?: string;
     placeholder?: string;
-    className?: string;
     required?: boolean;
     id?: string;
-    ref?: RefObject<HTMLInputElement>;
+    labelContainerStyle?: string;
+    labelStyle?: string;
+    inputStyle?: string;
+    errorStyle?: string;
   };
