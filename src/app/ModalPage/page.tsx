@@ -64,6 +64,7 @@ export default function ModalPage({}) {
           handleSubmit={handleSubmit}
           hasCancel
           hasConfirm
+          confirmButtonStyle="bg-green-500 hover:bg-green-600"
           confirmText={loading ? 'Sending...' : 'Submit'}
         >
           <form className="flex flex-col gap-5" method="dialog">
@@ -84,6 +85,15 @@ export default function ModalPage({}) {
                 className="p-2 border-b-2 border-gray-400"
                 placeholder="Enter your email"
                 name="email"
+              />
+            </label>
+            <label className="flex flex-col">
+              Name:
+              <input
+                onChange={handleNameChange}
+                className="p-2 border-b-2 border-gray-400"
+                placeholder="Type your name here"
+                name="name"
               />
             </label>
           </form>
