@@ -71,8 +71,8 @@ export function Modal({
       <dialog
         ref={modalRef}
         className={clsx(
-          'fixed inset-0 z-50 flex flex-col rounded-3xl w-[32rem] ', // Added max-h-[80vh] here
-          'transition-all duration-1000 ease-in-out transform shadow-2xl ' // Added overflow-y-auto here
+          'fixed inset-0 z-50 flex flex-col rounded-3xl w-[32rem]',
+          'transition-all duration-1000 ease-in-out transform shadow-2xl'
         )}
         open={open}
       >
