@@ -64,6 +64,7 @@ export default function ModalPage({}) {
           handleSubmit={handleSubmit}
           hasCancel
           hasConfirm
+          confirmButtonStyle="bg-green-500 hover:bg-green-600"
           confirmText={loading ? 'Sending...' : 'Submit'}
         >
           <form className="flex flex-col gap-5" method="dialog">

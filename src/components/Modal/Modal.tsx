@@ -103,8 +103,9 @@ export function Modal({
               onClick={close}
               size="medium"
               className={clsx(
-                'hover:text-white hover:bg-red-600 active:bg-red-500 focus:bg-red-500',
                 cancelButtonStyle
+                  ? cancelButtonStyle
+                  : 'hover:text-white hover:bg-red-600 active:bg-red-500 focus:bg-red-500'
               )}
             />
           ) : null}
@@ -115,8 +116,9 @@ export function Modal({
               onClick={handleSubmit}
               size="medium"
               className={clsx(
-                'bg-sky-700 hover:bg-sky-600 active:bg-sky-700 focus:bg-sky-700 ',
                 confirmButtonStyle
+                  ? confirmButtonStyle
+                  : 'bg-sky-700 hover:bg-sky-600 active:bg-sky-700 focus:bg-sky-700 '
               )}
             />
           ) : null}
