@@ -86,6 +86,15 @@ export default function ModalPage({}) {
                 name="email"
               />
             </label>
+            <label className="flex flex-col">
+              Name:
+              <input
+                onChange={handleNameChange}
+                className="p-2 border-b-2 border-gray-400"
+                placeholder="Type your name here"
+                name="name"
+              />
+            </label>
           </form>
         </Modal>
       )}
