@@ -21,7 +21,7 @@ export default function ButtonPage() {
               size="large"
             />
             <Button buttonStyle="elevatedCancel" title=" Cancel" />
-            <Button buttonStyle="elevatedDisabledStyle" title=" Disabled" />
+            <Button disabled buttonStyle="elevatedDisabledStyle" title=" Disabled" />
           </div>
         </div>
         <div className="flex flex-col gap-5">
