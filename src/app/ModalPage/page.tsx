@@ -61,11 +61,11 @@ export default function ModalPage({}) {
           open={modalOpen.isOpen}
           close={close}
           title={'Add Item'}
+          hasCancelButton
+          cancelText="Close"
+          hasConfirmButton
+          confirmText={loading ? 'Submitting' : 'Submit'}
           handleSubmit={handleSubmit}
-          hasCancel
-          hasConfirm
-          confirmButtonStyle="bg-green-500 hover:bg-green-600"
-          confirmText={loading ? 'Sending...' : 'Submit'}
         >
           <form className="flex flex-col gap-5" method="dialog">
             <label className="flex flex-col">

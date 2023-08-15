@@ -5,24 +5,16 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { Button } from '..'
 import { useEffect, useRef, useState } from 'react'
+import { AllOrNothing } from '@/types/helpers'
 
-export function Modal({
-  open,
-  close,
-  children,
-  title,
-  handleSubmit,
-  cancelText = 'Cancel',
-  confirmText = 'Confirm',
-  hasCancel,
-  hasConfirm,
-  footerStyles,
-  cancelButtonStyle,
-  confirmButtonStyle,
-}: ModalProps) {
+export function Modal(props: ModalProps) {
   const modalRef = useRef<HTMLDialogElement | null>(null)
-  const [isVisible, setIsVisible] = useState(open)
-  const [opacityClass, setOpacityClass] = useState(open ? 'opacity-0' : 'opacity-100')
+  const [isVisible, setIsVisible] = useState(props.open)
+  const [opacityClass, setOpacityClass] = useState(
+    props.open ? 'opacity-0' : 'opacity-100'
+  )
+
+  const { open, close } = props
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -43,7 +35,7 @@ export function Modal({
   }, [open, close])
 
   useEffect(() => {
-    if (open) {
+    if (props.open) {
       setIsVisible(true)
       setTimeout(() => {
         setOpacityClass('opacity-100')
@@ -54,7 +46,7 @@ export function Modal({
         setIsVisible(false)
       }, 1000) // match this with your transition duration
     }
-  }, [open])
+  }, [props.open])
 
   if (!isVisible) {
     return null
@@ -74,11 +66,11 @@ export function Modal({
           'fixed inset-0 z-50 flex flex-col rounded-3xl w-[32rem]',
           'transition-all duration-1000 ease-in-out transform shadow-2xl'
         )}
-        open={open}
+        open={props.open}
       >
         <div className="flex justify-between px-5 py-2 border-b-2 border-gray-400">
-          <h1 className="p-2 text-3xl font-semibold">{title}</h1>
-          <button onClick={close}>
+          <h1 className="p-2 text-3xl font-semibold">{props.title}</h1>
+          <button onClick={props.close}>
             <XMarkIcon
               height={20}
               width={20}
@@ -87,37 +79,37 @@ export function Modal({
           </button>
         </div>
 
-        <div className="p-10 max-h-[60vh] overflow-y-auto">{children}</div>
+        <div className="p-10 max-h-[60vh] overflow-y-auto">{props.children}</div>
 
         <footer
           className={clsx(
-            footerStyles
-              ? footerStyles
+            props.footerStyles
+              ? props.footerStyles
               : 'flex flex-row justify-between p-5 border-t-2 border-gray-400'
           )}
         >
-          {hasCancel ? (
+          {props.hasCancelButton ? (
             <Button
-              title={cancelText}
+              title={props.cancelText as string}
               buttonStyle="text"
-              onClick={close}
+              onClick={props.close}
               size="medium"
               className={clsx(
-                cancelButtonStyle
-                  ? cancelButtonStyle
+                props.cancelButtonStyle
+                  ? props.cancelButtonStyle
                   : 'hover:text-white hover:bg-red-600 active:bg-red-500 focus:bg-red-500'
               )}
             />
           ) : null}
 
-          {hasConfirm ? (
+          {props.hasConfirmButton ? (
             <Button
-              title={confirmText}
-              onClick={handleSubmit}
+              title={props.confirmText as string}
+              onClick={props.handleSubmit}
               size="medium"
               className={clsx(
-                confirmButtonStyle
-                  ? confirmButtonStyle
+                props.confirmButtonStyle
+                  ? props.confirmButtonStyle
                   : 'bg-sky-700 hover:bg-sky-600 active:bg-sky-700 focus:bg-sky-700 '
               )}
             />
