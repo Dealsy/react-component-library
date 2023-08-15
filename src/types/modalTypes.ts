@@ -1,6 +1,4 @@
-import { AllOrNothing } from './helpers'
-
-export type ModalOptions = {
+export type ModalProps = {
   /**
    * If true, the modal will have a cancel button. If false or not provided, the modal will not have a cancel button.
    *
@@ -14,9 +12,7 @@ export type ModalOptions = {
    * When enabled, you will get new props for the confirm button.
    * */
   hasConfirmButton?: boolean
-}
 
-export type CancelType = {
   /**
    * An optional text for the cancel button. If not provided, a default text is used.
    */
@@ -27,9 +23,7 @@ export type CancelType = {
    * If not provided, a default style class is used.
    */
   cancelButtonStyle?: string
-}
 
-export type ConfirmType = {
   /**
    * An optional text for the confirm button. If not provided, a default text is used.
    */
@@ -40,22 +34,12 @@ export type ConfirmType = {
    * If not provided, a default style class is used.
    * */
   confirmButtonStyle?: string
-}
 
-type BaseModalProps = {
   /**
    * If true, the modal will have a cancel button. If false or not provided, the modal will not have a cancel button.
    *
    * When enabled, you will get new props for the cancel button.
    * */
-  hasCancelButton?: boolean
-
-  /**
-   * If true, the modal will have a confirm button. If false or not provided, the modal will not have a confirm button.
-   *
-   * When enabled, you will get new props for the confirm button.
-   * */
-  hasConfirmButton?: boolean
   /**
    * An optional title for the modal. This can be used to provide a brief
    * description or context about the content of the modal.
@@ -94,8 +78,3 @@ type BaseModalProps = {
    * */
   footerStyles?: string
 }
-
-export type ModalProps<T extends ModalOptions> = BaseModalProps &
-  T &
-  (T['hasCancelButton'] extends true ? AllOrNothing<CancelType> : {}) &
-  (T['hasConfirmButton'] extends true ? AllOrNothing<ConfirmType> : {})

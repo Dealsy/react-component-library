@@ -1,13 +1,13 @@
 'use client'
 
-import { CancelType, ConfirmType, ModalOptions, ModalProps } from '@/types/modalTypes'
+import { ModalProps } from '@/types/modalTypes'
 import { XMarkIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { Button } from '..'
 import { useEffect, useRef, useState } from 'react'
 import { AllOrNothing } from '@/types/helpers'
 
-export function Modal<T extends ModalOptions>(props: ModalProps<T>) {
+export function Modal(props: ModalProps) {
   const modalRef = useRef<HTMLDialogElement | null>(null)
   const [isVisible, setIsVisible] = useState(props.open)
   const [opacityClass, setOpacityClass] = useState(
@@ -90,13 +90,13 @@ export function Modal<T extends ModalOptions>(props: ModalProps<T>) {
         >
           {props.hasCancelButton ? (
             <Button
-              title={(props as AllOrNothing<CancelType>).cancelText as string}
+              title={props.cancelText as string}
               buttonStyle="text"
               onClick={props.close}
               size="medium"
               className={clsx(
-                (props as AllOrNothing<CancelType>).cancelButtonStyle
-                  ? (props as AllOrNothing<CancelType>).cancelButtonStyle
+                props.cancelButtonStyle
+                  ? props.cancelButtonStyle
                   : 'hover:text-white hover:bg-red-600 active:bg-red-500 focus:bg-red-500'
               )}
             />
@@ -104,12 +104,12 @@ export function Modal<T extends ModalOptions>(props: ModalProps<T>) {
 
           {props.hasConfirmButton ? (
             <Button
-              title={(props as AllOrNothing<ConfirmType>).confirmText as string}
+              title={props.confirmText as string}
               onClick={props.handleSubmit}
               size="medium"
               className={clsx(
-                (props as AllOrNothing<ConfirmType>).confirmButtonStyle
-                  ? (props as AllOrNothing<ConfirmType>).confirmButtonStyle
+                props.confirmButtonStyle
+                  ? props.confirmButtonStyle
                   : 'bg-sky-700 hover:bg-sky-600 active:bg-sky-700 focus:bg-sky-700 '
               )}
             />

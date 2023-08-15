@@ -62,7 +62,7 @@ export default function ModalPage({}) {
           close={close}
           title={'Add Item'}
           hasCancelButton
-          cancelText="ss"
+          cancelText="Close"
           hasConfirmButton
           confirmText={loading ? 'Submitting' : 'Submit'}
           handleSubmit={handleSubmit}
