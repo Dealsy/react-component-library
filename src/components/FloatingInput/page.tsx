@@ -4,7 +4,7 @@ import { InputProps } from '@/types/inputTypes'
 import clsx from 'clsx'
 import { useState } from 'react'
 
-export function Input(props: InputProps) {
+export function FloatingInput(props: InputProps) {
   const [isFocused, setIsFocused] = useState(false)
   const [hasValue, setHasValue] = useState(false)
 
