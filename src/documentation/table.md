@@ -31,6 +31,13 @@ Optional CSS styles for the header.
 ## tableStyles?: string
 Optional CSS styles for the table rows.
 
+ ## hasSortFilters?: boolean
+ Optional: When set to `true`, sort filters are added to each column for selection.
+
+ ## sortableColumns?: string[]
+ An optional array of strings specifying which columns are sortable.
+ The strings should match the text in the headers for those columns.
+
 ## hasCheckboxes?: boolean
 Optional. When set to true, checkboxes are added to each row for selection.
 

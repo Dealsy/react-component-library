@@ -32,6 +32,17 @@ export type TableProps<T> = {
   hasCheckboxes?: boolean
 
   /**
+   * Optional: When set to `true`, sort filters are added to each column for selection.
+   */
+  hasSortFilters?: boolean
+
+  /**
+   * An optional array of strings specifying which columns are sortable.
+   * The strings should match the text in the headers for those columns.
+   */
+  sortableColumns?: string[]
+
+  /**
    * Optional: A callback function that's triggered whenever the selection changes.
    * It receives a set containing the selected rows.
    */
