@@ -1,39 +1,51 @@
+'use client'
+
 import { Table } from '@/components'
 
 export default function TablePage() {
-  const headers = ['ID', 'Name', 'Address']
+  const headers = ['ID', 'Name', 'Address', 'Status']
   const rows = [
     {
       id: 1,
       name: 'Matt Deal',
-      Address: '1234 Main St',
+      address: '1234 Main St',
+      status: 'active',
     },
     {
       id: 2,
       name: 'Lucy Deal',
-      Address: '1234 Main St',
+      address: '1234 Main St',
+      status: 'inActive',
     },
     {
       id: 3,
       name: 'Zoe Deal',
-      Address: '1234 Main St',
+      address: '1234 Main St',
+      status: 'active',
     },
     {
       id: 4,
       name: 'Axel Deal',
-      Address: '1234 Main St',
+      address: '1234 Main St',
+      status: 'active',
     },
     {
       id: 5,
       name: 'Jett Deal',
-      Address: '1234 Main St',
+      address: '1234 Main St',
+      status: 'active',
     },
   ]
 
   type userObject = {
     id: number
     name: string
-    Address: string
+    address: string
+    status?: string
+  }
+
+  const handleSelectionChange = (selectedRows: Set<userObject>) => {
+    console.log('Selected items:', Array.from(selectedRows))
   }
 
   return (
@@ -46,9 +58,14 @@ export default function TablePage() {
           <>
             <td className="px-6 py-3">{row.id}</td>
             <td className="px-6 py-3 ">{row.name}</td>
-            <td className="px-6 py-3 ">{row.Address}</td>
+            <td className="px-6 py-3 ">{row.address}</td>
+            <td className="px-6 py-3 ">{row.status}</td>
           </>
         )}
+        hasCheckboxes={true}
+        onSelectionChange={handleSelectionChange}
+        sortableColumns={['ID', 'Name', 'Address', 'Status']}
+        hasSortFilters
       />
     </div>
   )
