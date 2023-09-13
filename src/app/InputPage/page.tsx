@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@/components/Input/page'
+import { FloatingInput } from '@/components/FloatingInput/page'
 import { useState } from 'react'
 
 export default function InputPage() {
@@ -26,14 +26,19 @@ export default function InputPage() {
   return (
     <div className="flex flex-col items-center justify-center gap-5 m-auto mt-20">
       <div className="flex flex-col gap-5 leading-none">
-        <Input
+        <FloatingInput
           error={error}
           label="Name"
           id={'name'}
           onChange={handleInputChange}
           value={name}
         />
-        <Input label="Test" id={'test'} onChange={handleInputTestChange} value={test} />
+        <FloatingInput
+          label="Test"
+          id={'test'}
+          onChange={handleInputTestChange}
+          value={test}
+        />
       </div>
     </div>
   )
